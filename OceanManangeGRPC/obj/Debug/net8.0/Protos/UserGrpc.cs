@@ -7,10 +7,10 @@
 
 using grpc = global::Grpc.Core;
 
-namespace OceanManangeGRPC {
+namespace OceanManageGRPC.Protos {
   public static partial class UserService
   {
-    static readonly string __ServiceName = "users.UserService";
+    static readonly string __ServiceName = "user.UserService";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -46,34 +46,22 @@ namespace OceanManangeGRPC {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::OceanManangeGRPC.GetUserRequest> __Marshaller_users_GetUserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::OceanManangeGRPC.GetUserRequest.Parser));
+    static readonly grpc::Marshaller<global::OceanManageGRPC.Protos.UserRequest> __Marshaller_user_UserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::OceanManageGRPC.Protos.UserRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::OceanManangeGRPC.GetUserResponse> __Marshaller_users_GetUserResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::OceanManangeGRPC.GetUserResponse.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::OceanManangeGRPC.CreateUserRequest> __Marshaller_users_CreateUserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::OceanManangeGRPC.CreateUserRequest.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::OceanManangeGRPC.CreateUserResponse> __Marshaller_users_CreateUserResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::OceanManangeGRPC.CreateUserResponse.Parser));
+    static readonly grpc::Marshaller<global::OceanManageGRPC.Protos.UserResponse> __Marshaller_user_UserResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::OceanManageGRPC.Protos.UserResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::OceanManangeGRPC.GetUserRequest, global::OceanManangeGRPC.GetUserResponse> __Method_GetUserById = new grpc::Method<global::OceanManangeGRPC.GetUserRequest, global::OceanManangeGRPC.GetUserResponse>(
+    static readonly grpc::Method<global::OceanManageGRPC.Protos.UserRequest, global::OceanManageGRPC.Protos.UserResponse> __Method_GetUser = new grpc::Method<global::OceanManageGRPC.Protos.UserRequest, global::OceanManageGRPC.Protos.UserResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "GetUserById",
-        __Marshaller_users_GetUserRequest,
-        __Marshaller_users_GetUserResponse);
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::OceanManangeGRPC.CreateUserRequest, global::OceanManangeGRPC.CreateUserResponse> __Method_CreateUser = new grpc::Method<global::OceanManangeGRPC.CreateUserRequest, global::OceanManangeGRPC.CreateUserResponse>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "CreateUser",
-        __Marshaller_users_CreateUserRequest,
-        __Marshaller_users_CreateUserResponse);
+        "GetUser",
+        __Marshaller_user_UserRequest,
+        __Marshaller_user_UserResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::OceanManangeGRPC.UserReflection.Descriptor.Services[0]; }
+      get { return global::OceanManageGRPC.Protos.UserReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of UserService</summary>
@@ -81,17 +69,66 @@ namespace OceanManangeGRPC {
     public abstract partial class UserServiceBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::OceanManangeGRPC.GetUserResponse> GetUserById(global::OceanManangeGRPC.GetUserRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::OceanManageGRPC.Protos.UserResponse> GetUser(global::OceanManageGRPC.Protos.UserRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+    }
+
+    /// <summary>Client for UserService</summary>
+    public partial class UserServiceClient : grpc::ClientBase<UserServiceClient>
+    {
+      /// <summary>Creates a new client for UserService</summary>
+      /// <param name="channel">The channel to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public UserServiceClient(grpc::ChannelBase channel) : base(channel)
+      {
+      }
+      /// <summary>Creates a new client for UserService that uses a custom <c>CallInvoker</c>.</summary>
+      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public UserServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      {
+      }
+      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected UserServiceClient() : base()
+      {
+      }
+      /// <summary>Protected constructor to allow creation of configured clients.</summary>
+      /// <param name="configuration">The client configuration.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected UserServiceClient(ClientBaseConfiguration configuration) : base(configuration)
+      {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::OceanManangeGRPC.CreateUserResponse> CreateUser(global::OceanManangeGRPC.CreateUserRequest request, grpc::ServerCallContext context)
+      public virtual global::OceanManageGRPC.Protos.UserResponse GetUser(global::OceanManageGRPC.Protos.UserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        return GetUser(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::OceanManageGRPC.Protos.UserResponse GetUser(global::OceanManageGRPC.Protos.UserRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetUser, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::OceanManageGRPC.Protos.UserResponse> GetUserAsync(global::OceanManageGRPC.Protos.UserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetUserAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::OceanManageGRPC.Protos.UserResponse> GetUserAsync(global::OceanManageGRPC.Protos.UserRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetUser, null, options, request);
+      }
+      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected override UserServiceClient NewInstance(ClientBaseConfiguration configuration)
+      {
+        return new UserServiceClient(configuration);
+      }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -100,8 +137,7 @@ namespace OceanManangeGRPC {
     public static grpc::ServerServiceDefinition BindService(UserServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetUserById, serviceImpl.GetUserById)
-          .AddMethod(__Method_CreateUser, serviceImpl.CreateUser).Build();
+          .AddMethod(__Method_GetUser, serviceImpl.GetUser).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -111,8 +147,7 @@ namespace OceanManangeGRPC {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, UserServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_GetUserById, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::OceanManangeGRPC.GetUserRequest, global::OceanManangeGRPC.GetUserResponse>(serviceImpl.GetUserById));
-      serviceBinder.AddMethod(__Method_CreateUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::OceanManangeGRPC.CreateUserRequest, global::OceanManangeGRPC.CreateUserResponse>(serviceImpl.CreateUser));
+      serviceBinder.AddMethod(__Method_GetUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::OceanManageGRPC.Protos.UserRequest, global::OceanManageGRPC.Protos.UserResponse>(serviceImpl.GetUser));
     }
 
   }

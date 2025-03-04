@@ -7,13 +7,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-		<Protobuf Include="Protos\**\*.proto" GrpcServices="Server" />
+		<Protobuf Include="Protos\**\*.proto" /><!--GrpcServices="Server"-->
+        
     </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Google.Protobuf" Version="3.29.2" />
         <PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
+        <PackageReference Include="Grpc.AspNetCore.Web" Version="2.67.0" />
         <PackageReference Include="Grpc.Net.Client" Version="2.67.0" />
+        <PackageReference Include="Grpc.Net.Client.Web" Version="2.67.0" />
+        <PackageReference Include="Grpc.Net.ClientFactory" Version="2.67.0" />
         <PackageReference Include="Grpc.Tools" Version="2.68.1">
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
           <PrivateAssets>all</PrivateAssets>
@@ -24,6 +28,7 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
           <PrivateAssets>all</PrivateAssets>
         </PackageReference>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
     </ItemGroup>
 
     <ItemGroup>

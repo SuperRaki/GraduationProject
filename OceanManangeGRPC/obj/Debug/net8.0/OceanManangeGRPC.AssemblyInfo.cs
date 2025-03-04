@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OceanManangeGRPC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9877c21fef870fec9ab42fb15d28ce9457ecb0ee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+957772470bd61abaf469ab517f0cc8fffee12666")]
 [assembly: System.Reflection.AssemblyProductAttribute("OceanManangeGRPC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OceanManangeGRPC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

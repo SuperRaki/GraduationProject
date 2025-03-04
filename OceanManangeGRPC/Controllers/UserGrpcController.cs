@@ -1,26 +1,30 @@
 using Grpc.Core;
-using OceanManangeGRPC.Services;
+using Microsoft.AspNetCore.Mvc;
+using OceanManageGRPC.Protos;
+using UserService = OceanManangeGRPC.Services.UserService;
 
 namespace OceanManangeGRPC.Controllers;
 
-public class UserGrpcController :UserService.UserServiceBase {
-    private readonly IUserService _userService;
+[ApiController]
+[Route("api/user")]
+public class UserController : ControllerBase
+{
+    private readonly UserService _userService;
 
-    public UserGrpcController(IUserService userService) {
+    public UserController(UserService userService)
+    {
         _userService = userService;
     }
 
-    public override async Task<GetUserResponse> GetUserById(GetUserRequest request, ServerCallContext context) {
-        var user = await _userService.GetUserByIdAsync(request.Id);
-        return new GetUserResponse {
-            Id = user.Id,
-            Name = user.Name,
-            Email = user.Email
-        };
-    }
+    [HttpPost("GetUser")]
+    public async Task<IActionResult> GetUser(int id)
+    {   
+        // 添加日志输出
+        Console.WriteLine($"Received GET request for user with ID: {id}");
 
-    public override async Task<CreateUserResponse> CreateUser(CreateUserRequest request, ServerCallContext context) {
-        var userId = await _userService.CreateUserAsync(request.Name, request.Email);
-        return new CreateUserResponse { Id = userId };
+        var request = new UserRequest { Id = id };
+        var response = await _userService.GetUserService(request,null);
+
+        return Ok(response);  // 返回 gRPC 响应
     }
 }
